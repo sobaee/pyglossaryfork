@@ -78,6 +78,14 @@ root_data_file_names = [
 	"help",
 	"AUTHORS",
 	"config.json",
+	"check-shell-scripts.sh",
+	"run-with-docker.sh",
+	"whitelist.py",
+	"main.py",
+	"scripts/*",
+	"tests/*",
+	"pkg/*",
+	"doc/*",
 ]
 
 sep = "\\\\" if os.sep == "\\" else os.sep
@@ -89,10 +97,12 @@ package_data = {
 		"tools/*",
 	],
 	"pyglossary": [
+		"*.*",
 		"*.py",
 		"xdxf.xsl",
 		"res/*",
 		"plugins/*",
+		"plugins/*.py",
 		"langs/*",
 		"plugin_lib/*.py",
 		"plugin_lib/py*/*.py",
@@ -101,6 +111,7 @@ package_data = {
 		"ui/progressbar/*.py",
 		"ui/gtk3_utils/*.py",
 		"ui/gtk4_utils/*.py",
+		"ui/ui_gtk4/*.py",
 		"ui/tools/*.py",
 		"ui/wcwidth/*.py",
 		"ui/ui_web/*.py",
@@ -109,8 +120,11 @@ package_data = {
 		"ui/ui_web/*.css",
 		"ui/ui_web/*.js",
 		"xdxf/xdxf.xsl",
+		"xdxf/xdxf.css",
+		"xdxf/xdxf.js",
 		"xdxf/*.py",
 		"repro_zipfile/*.py",
+		"repro_zipfile/LICENSE",
 	]
 	+ [
 		# safest way found so far to include every resource of plugins
