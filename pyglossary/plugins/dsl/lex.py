@@ -269,7 +269,7 @@ def lexTagS(tr: TransformerType) -> tuple[LexType, ErrorType]:
 				'<param name="autoplay" value="false" />'
 				"</object>"
 			)
-	elif ext in {"jpg", "jpeg", "gif", "tif", "tiff", "png", "bmp"}:
+	elif ext in {"jpg", "jpeg", "gif", "tif", "tiff", "png", "bmp", "webp"}:
 		tr.addHtml(rf'<img align="top" src="{fname}" alt="{fname}" />')
 	else:
 		log.warning(f"unknown file extension in {fname!r}")
@@ -313,7 +313,7 @@ def processTag(tr: TransformerType, tag: str) -> tuple[LexType, ErrorType]:  # n
 		tr.closeTag(tag[1:])
 		return lexRoot, None
 
-	tag = tag.split(" ")[0]
+	tag = tag.split(" ", maxsplit=1)[0]
 
 	if tag == "ref":
 		return lexRefText(tr)
